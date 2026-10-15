@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Ingresar — Lean Importados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head><body class="admin">
+<main class="auth">
+<form class="card" id="login-form"><h1>Lean <em>Admin</em></h1><p class="muted">Ingresá con tu cuenta para administrar la tienda.</p>
+<p class="flash" id="flash" role="status" aria-live="polite" hidden></p>
+<label>Email<input type="email" id="email" required autocomplete="username"></label>
+<label>Contraseña<input type="password" id="pass" required autocomplete="current-password"></label>
+<button class="btn" type="submit" id="btn-login">Ingresar</button>
+<p class="err" id="login-err" role="alert"></p>
+<a class="adm" href="index.html">← Volver a la tienda</a></form>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/login.js"></script>
+</body></html>

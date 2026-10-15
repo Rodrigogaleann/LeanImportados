@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<title>Panel — Lean Importados</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head><body class="admin">
+<div class="aviso" id="aviso" role="alert" hidden></div>
+<main class="panel">
+<header class="a-hd"><h1>Panel</h1><div><span class="muted" id="who"></span> <button class="btn ghost" id="logout">Cerrar sesión</button> <a class="adm" href="index.html">Ver tienda</a></div></header>
+
+<section class="dash card" aria-labelledby="dash-t">
+<div class="dash-hd"><h2 id="dash-t">Métricas</h2>
+<div class="rango">
+<label>Desde<input type="date" id="d-desde"></label>
+<label>Hasta<input type="date" id="d-hasta"></label>
+<div class="presets"><button class="rb" data-d="1">Hoy</button><button class="rb" data-d="7">7 días</button><button class="rb" data-d="30">30 días</button><button class="rb" data-d="mes">Este mes</button></div>
+</div></div>
+<div class="kpis">
+<div class="kpi"><span>Visitas a la web</span><b id="k-vis">–</b></div>
+<div class="kpi"><span>Visitantes únicos</span><b id="k-uni">–</b></div>
+<div class="kpi"><span>Clicks para pedir</span><b id="k-ped">–</b></div>
+</div>
+<div class="chart"><div class="bars" id="bars" role="img" aria-label="Visitas y pedidos por día"></div>
+<div class="axis"><span id="ax-a"></span><span class="lg"><i class="v"></i>Visitas <i class="p"></i>Pedidos</span><span id="ax-b"></span></div></div>
+<h3>Productos más pedidos</h3>
+<div class="tbl-wrap"><table><thead><tr><th>Producto</th><th>Categoría</th><th>Clicks</th></tr></thead><tbody id="top"></tbody></table></div>
+</section>
+
+<form class="card form" id="prod-form"><h2 id="form-title">Agregar nuevo producto</h2>
+<input type="hidden" id="f-id">
+<label>Nombre<input id="f-nombre" required maxlength="120"></label>
+<label>Categoría<select id="f-cat" required></select></label>
+<label>Precio (ARS)<input id="f-precio" type="number" min="0" step="1" required></label>
+<label>Stock<input id="f-stock" type="number" min="0" step="1" value="0" required></label>
+<label>Talles (separados por coma)<input id="f-talles" placeholder="S, M, L, XL"></label>
+<label>URL de la foto<input id="f-img" type="url" placeholder="https://..."></label>
+<label class="chk"><input type="checkbox" id="f-estado" checked> Publicado</label>
+<label class="chk"><input type="checkbox" id="f-dest"> Destacado</label>
+<div class="f-act"><button class="btn" type="submit" id="f-save">Guardar</button><button class="btn ghost" type="button" id="f-cancel" hidden>Cancelar edición</button></div>
+</form>
+<div class="tbl-wrap"><table><thead><tr><th>Foto</th><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Stock</th><th>Estado</th><th>Acciones</th></tr></thead><tbody id="rows"></tbody></table></div>
+</main>
+<div class="toast" id="toast" role="status"></div>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="js/supabase.js"></script>
+<script src="js/panel.js"></script>
+</body></html>
